@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown timer</title>
+    <link rel="stylesheet" href="csc.css">
+</head>
+<body>
+  
+   <div class="img">
+    <div>
+  
+   <p>wish u advance</p>
+   <h2 class="newyear"> happy birhtday</h2>
+   <div class="counter">
+
+    <div class="box">
+        <h2 id="days">00</h2>
+        <small>days</small>
+    </div>
+
+    <div class="box">
+        <h2 id="hours">00</h2>
+        <small>hours</small>
+    </div>
+
+    <div class="box">
+        <h2 id="minutes">00</h2>
+        <small>minutes</small>
+    </div>
+
+    <div class="box">
+        <h2 id="seconds">00</h2>
+        <small>seconds</small>
+    </div>
+   </div>
+   <audio id="myaudio"  loop>
+    <source src="audio.mp3" type="audio/ogg">
+    <source src="audio.mp3" type="audio/mpeg">
+
+   </audio>
+
+   <button  class="btn"  onclick="playAudio()">play</button>
+</div>
+</div>
+<script src="java.js">
+
+</script>
+<script>
+    var x=document.getElementById("myaudio");
+    function playAudio(){
+        x.play();
+    }
+ 
+    </script>
+</body>
+</html>
