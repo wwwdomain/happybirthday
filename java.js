@@ -1,27 +1,93 @@
-//const days=document.querySelector("#days");
-//const hours=document.querySelector("#hours");
-//const minutes=document.querySelector("#minutes");
-//const seconds=document.querySelector("#seconds");
-function updatetime(){
-const currentYear=new Date().getFullYear();
-const newYear=new Date(`july 14 ${currentYear} 00:00:00`);
-const currentdate=new Date();
-const diff=newYear-currentdate;
-const d=Math.floor(diff/1000/60/60/24);
-const h=Math.floor((diff/1000/60/60)%24);
-const m=Math.floor((diff/1000/60)%60);
-const s=Math.floor((diff/1000)%60);
-document.getElementById("days").innerHTML=d<10?"0"+d:d;
-document.getElementById("hours").innerHTML=h<10?"0"+h:h;
-document.getElementById("minutes").innerHTML=m<10?"0"+m:m;
-document.getElementById("seconds").innerHTML=s<10?"0"+s:s;
+function updateTime() {
 
+    const now = new Date();
+
+    const birthday = new Date(now.getFullYear(), 6, 14, 0, 0, 0);
+
+    const diff = birthday - now;
+
+    if (diff <= 0 && now.getMonth() === 6 && now.getDate() === 14) {
+        document.getElementById("birthdayScreen").style.display = "flex";
+        clearInterval(timer);
+        return;
+    }
+
+    let target = birthday;
+
+    if (diff < 0) {
+        target = new Date(now.getFullYear() + 1, 6, 14, 0, 0, 0);
+    }
+
+    const remain = target - now;
+
+    document.getElementById("days").textContent =
+        Math.floor(remain / 86400000);
+
+    document.getElementById("hours").textContent =
+        Math.floor(remain / 3600000) % 24;
+
+    document.getElementById("minutes").textContent =
+        Math.floor(remain / 60000) % 60;
+
+    document.getElementById("seconds").textContent =
+        Math.floor(remain / 1000) % 60;
 }
-setInterval(updatetime,100);
-h1.innerHTML="happy birthday";
 
-/*1000ms =1s
-60s=1m;
-60m=1hr
-24hrs=1day;
-*/
+let timer;
+
+timer = setInterval(updateTime, 1000);
+updateTime();
+        // ---------- MUSIC PLAYER ----------
+        const songs = [
+            "audio.mp3",
+            "audio2.mp3",
+            "audio3.mp3"
+        ];
+
+        let currentSong = 0;
+        const player = document.getElementById("myaudio");
+        player.src = songs[currentSong];
+
+        // load first song metadata (optional)
+        player.load();
+
+        function playPause() {
+            const icon = document.getElementById("playIcon");
+            if (player.paused) {
+                player.play();
+                icon.className = "fas fa-pause";
+            } else {
+                player.pause();
+                icon.className = "fas fa-play";
+            }
+        }
+
+        function nextSong() {
+            currentSong = (currentSong + 1) % songs.length;
+            player.src = songs[currentSong];
+            player.play();
+            document.getElementById("playIcon").className = "fas fa-pause";
+        }
+
+        function prevSong() {
+            currentSong = (currentSong - 1 + songs.length) % songs.length;
+            player.src = songs[currentSong];
+            player.play();
+            document.getElementById("playIcon").className = "fas fa-pause";
+        }
+
+        // auto-play next when song ends
+        player.addEventListener("ended", function() {
+            nextSong();
+        });
+
+        // update play icon when user pauses via browser controls (optional)
+        player.addEventListener("pause", function() {
+            document.getElementById("playIcon").className = "fas fa-play";
+        });
+        player.addEventListener("play", function() {
+            document.getElementById("playIcon").className = "fas fa-pause";
+        });
+
+        
+        
