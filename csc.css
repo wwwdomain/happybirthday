@@ -207,7 +207,7 @@ p {
     align-items: center;
     flex-direction: column;
 
-     background: url("happy.png") center center / cover no-repeat;
+     background: url("happy2.png") center center / cover no-repeat;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -366,7 +366,8 @@ p {
       
     }
       #birthdayScreen{
-        background-position: center center;
+        background: url(happy.png) center center / cover no-repeat;
+          background-size: 100% 100%;
     }
 
     .social a{
