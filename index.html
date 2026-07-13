@@ -3,56 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>happyvjk</title>
+     <link rel="icon" type="image/x-icon" href="logo.ico">
+    <title>Happy Birthday VJ Kalyani</title>
     <link rel="stylesheet" href="csc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-  
-   <div class="img">
-    <div>
-  
-   <p>wish u advance</p>
-   <h2 class="newyear"> happy birhtday</h2>
-   <div class="counter">
 
-    <div class="box">
-        <h2 id="days">00</h2>
-        <small>days</small>
+    <div class="img">
+        <div class="content-wrapper">
+            <p>🎈 wish u advance 🎈</p>
+            <h1 id="title" class="birthday">Happy Birthday</h1>
+            
+            <div class="counter">
+                <div class="box">
+                    <h2 id="days">00</h2>
+                    <small>days</small>
+                </div>
+                <div class="box">
+                    <h2 id="hours">00</h2>
+                    <small>hours</small>
+                </div>
+                <div class="box">
+                    <h2 id="minutes">00</h2>
+                    <small>minutes</small>
+                </div>
+                <div class="box">
+                    <h2 id="seconds">00</h2>
+                    <small>seconds</small>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="box">
-        <h2 id="hours">00</h2>
-        <small>hours</small>
-    </div>
+  <div class="social">
+    <a href="https://www.instagram.com/vj_kalyani" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
 
-    <div class="box">
-        <h2 id="minutes">00</h2>
-        <small>minutes</small>
-    </div>
+    <a href="https://www.youtube.com/@GetKalyanified" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
 
-    <div class="box">
-        <h2 id="seconds">00</h2>
-        <small>seconds</small>
-    </div>
-   </div>
-   <audio id="myaudio"  loop>
-    <source src="audio.mp3" type="audio/ogg">
-    <source src="audio.mp3" type="audio/mpeg">
+    <a href="https://www.facebook.com/profile.php?id=100063867574156" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
 
-   </audio>
-
-   <button  class="btn"  onclick="playAudio()">play</button>
+    <a href="mailto:thesmartkalyani@gmail.com?subject=Hello">
+        <i class="fas fa-envelope"></i>
+    </a>
 </div>
-</div>
-<script src="java.js">
 
-</script>
-<script>
-    var x=document.getElementById("myaudio");
-    function playAudio(){
-        x.play();
-    }
- 
-    </script>
+    <audio id="myaudio"></audio>
+    <div class="music-controls">
+        <button onclick="prevSong()"><i class="fas fa-step-backward"></i></button>
+        <button class="play-btn" onclick="playPause()"><i id="playIcon" class="fas fa-play"></i></button>
+        <button onclick="nextSong()"><i class="fas fa-step-forward"></i></button>
+    </div>
+
+    <div id="birthdayScreen">
+        <h1>🎉 Happy Birthday VJ Kalyani 🎉</h1>
+        <h2 class="quote">
+            "May your smile shine brighter than the stars,
+            your dreams grow bigger every day,
+            and your life be filled with endless happiness. ❤️"
+        </h2>
+        <div class="balloon b1">🎈</div>
+        <div class="balloon b2">🎈</div>
+        <div class="balloon b3">🎈</div>
+        <div class="balloon b4">🎈</div>
+        <div class="balloon b5">🎈</div>
+
+        
+    </div>
+
+    <script src="java.js"></script>
 </body>
 </html>
